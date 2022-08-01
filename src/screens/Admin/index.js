@@ -31,10 +31,16 @@ const AdminScreen = props => {
   );
 
   useEffect(() => {
-    isLandscape();
-    Dimensions.addEventListener('change', () => {
-      setOrientation(isLandscape() ? 'landscape' : 'portrait');
-    });
+    let unmounted = false;
+    if (!unmounted) {
+      isLandscape();
+      Dimensions.addEventListener('change', () => {
+        setOrientation(isLandscape() ? 'landscape' : 'portrait');
+      });
+    }
+    return () => {
+      unmounted = true;
+    };
   }, []);
 
   const backAction = () => {
@@ -43,9 +49,14 @@ const AdminScreen = props => {
   };
 
   useEffect(() => {
-    BackHandler.addEventListener('hardwareBackPress', backAction);
-    return () =>
+    let unmounted = false;
+    if (!unmounted) {
+      BackHandler.addEventListener('hardwareBackPress', backAction);
+    }
+    return () => {
       BackHandler.removeEventListener('hardwareBackPress', backAction);
+      unmounted = true;
+    };
   }, []);
 
   return (

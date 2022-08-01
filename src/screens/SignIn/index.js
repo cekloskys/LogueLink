@@ -45,13 +45,20 @@ const SignInScreen = () => {
   }, [error]);
 
   useEffect(() => {
+    let unmounted = false;
+
     if (data) {
-      // save token
-      localStorage.setItem('token', data.signInLink.token);
-      localStorage.setItem('Name', data.signInLink.user.name);
-      navigation.navigate('Admin');
+      if (!unmounted) {
+        // save token
+        localStorage.setItem('token', data.signInLink.token);
+        localStorage.setItem('Name', data.signInLink.user.name);
+        navigation.navigate('Admin');
+      }
     }
-  }, [data]);
+    return () => {
+      unmounted = true;
+    };
+  }, [data, navigation]);
 
   const onSubmit = async () => {
     if (!id || !pass) {

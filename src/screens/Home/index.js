@@ -31,10 +31,16 @@ const HomeScreen = props => {
   );
 
   useEffect(() => {
-    isLandscape();
-    Dimensions.addEventListener('change', () => {
-      setOrientation(isLandscape() ? 'landscape' : 'portrait');
-    });
+    let unmounted = false;
+    if (!unmounted) {
+      isLandscape();
+      Dimensions.addEventListener('change', () => {
+        setOrientation(isLandscape() ? 'landscape' : 'portrait');
+      });
+    }
+    return () => {
+      unmounted = true;
+    };
   }, []);
 
   return (

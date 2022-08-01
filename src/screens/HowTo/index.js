@@ -25,9 +25,15 @@ const HowToScreen = props => {
   }, [error]);
 
   useEffect(() => {
+    let unmounted = false;
     if (data) {
-      setResults(data.tutorials);
+      if (!unmounted) {
+        setResults(data.tutorials);
+      }
     }
+    return () => {
+      unmounted = true;
+    };
   }, [data, results]);
   return (
     <View>

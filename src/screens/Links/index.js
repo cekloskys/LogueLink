@@ -26,9 +26,16 @@ const LinksScreem = props => {
   }, [error]);
 
   useEffect(() => {
+    let unmounted = false;
+
     if (data) {
-      setResults(data.links);
+      if (!unmounted) {
+        setResults(data.links);
+      }
     }
+    return () => {
+      unmounted = true;
+    };
   }, [data]);
   return (
     <View>
