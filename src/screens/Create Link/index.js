@@ -73,7 +73,7 @@ const CreateLinkScreen = () => {
 
   const onCreateLink = async () => {
     if (!uri) {
-      Alert.alert('Invalid Input', 'Please fill in URL!');
+      Alert.alert('Invalid Input', 'Please fill in a URL!');
       return;
     }
     if (!uri.startsWith('https://')) {
@@ -81,11 +81,11 @@ const CreateLinkScreen = () => {
       return;
     }
     if (!title) {
-      Alert.alert('Invalid Input', 'Please fill in Title!');
+      Alert.alert('Invalid Input', 'Please fill in a Title!');
       return;
     }
     if (!type) {
-      alert('Please select a Type!');
+      Alert.alert('Invalid Input', 'Please select a Type!');
       return;
     }
 
@@ -128,7 +128,7 @@ const CreateLinkScreen = () => {
           numberOfLines={10}
         />
         <SelectBox
-          label="Type ..."
+          label="Select Type"
           options={types}
           value={type}
           onChange={onChange()}
