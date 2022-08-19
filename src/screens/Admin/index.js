@@ -67,7 +67,7 @@ const AdminScreen = props => {
       <View style={styles.header}>
         {isLandscape() === false ? (
           <Text style={styles.title}>
-            Welcome {localStorage.getItem('Name')}
+            Hi {localStorage.getItem('Name')}
             <Text style={styles.title4}>
               {'\n'}Would you like to add or delete a URL?
             </Text>

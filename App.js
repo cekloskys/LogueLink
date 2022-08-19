@@ -23,5 +23,7 @@ const App = () => {
   );
 };
 
-LogBox.ignoreLogs(['Warning: ...']);
+LogBox.ignoreLogs(['Reanimated 2']);
+LogBox.ignoreLogs(['onAnimatedValueUpdate']);
+LogBox.ignoreLogs(['Warning: ']);
 export default App;
