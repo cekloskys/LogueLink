@@ -3,8 +3,6 @@ import React, {useEffect} from 'react';
 import {
   Text,
   Image,
-  Pressable,
-  Linking,
   TouchableOpacity,
   View,
   Alert,
@@ -33,7 +31,6 @@ const LinkDelete = props => {
 
   useEffect(() => {
     if (error) {
-      //console.log(error);
       Alert.alert('Error', error.message);
     }
   }, [error]);
@@ -51,7 +48,6 @@ const LinkDelete = props => {
 
   useEffect(() => {
     if (tutorialError) {
-      //console.log(tutorialError);
       Alert.alert('Error', tutorialError.message);
     }
   }, [tutorialError]);
@@ -72,9 +68,6 @@ const LinkDelete = props => {
         {
           text: 'Yes',
           onPress: async () => {
-            /* console.log(
-              'User Deleted Link Deleteing Link Then Returning to Admin',
-            ); */
             if (post.type === 'Link') {
               await deleteLink({variables: {deleteLinkId: deleteLinkId}})
                 .then(navigation.navigate('Admin'))
@@ -91,7 +84,6 @@ const LinkDelete = props => {
         {
           text: 'No',
           onPress: () => {
-            //console.log('User Canceled Returning to Admin');
             navigation.navigate('Admin');
           },
         },

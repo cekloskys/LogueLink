@@ -1,6 +1,5 @@
 import React from 'react';
 import {View, Dimensions} from 'react-native';
-import HowToDetail from '../../components/HowToDetail';
 import {useRoute} from '@react-navigation/native';
 import styles from './styles';
 import Pdf from 'react-native-pdf';

@@ -1,5 +1,4 @@
 import React from 'react';
-import {Dimensions} from 'react-native';
 import Pdf from 'react-native-pdf';
 
 const HowToDetail = props => {
@@ -19,7 +18,6 @@ const HowToDetail = props => {
       style={{
         flex: 1,
         width: 200,
-        //height: Dimensions.get('window').height,
       }}
     />
   );

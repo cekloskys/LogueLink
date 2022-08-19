@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Alert, FlatList, View, Text} from 'react-native';
+import {Alert, FlatList, View} from 'react-native';
 import HowTo from '../../components/HowTo';
 import {useQuery, gql} from '@apollo/client';
 

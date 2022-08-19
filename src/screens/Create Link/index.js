@@ -3,7 +3,7 @@ import {View, Text, TextInput, Pressable, Alert} from 'react-native';
 import SelectBox from 'react-native-multi-selectbox';
 import styles from '../Create Link/styles';
 import {useNavigation} from '@react-navigation/native';
-import {useMutation, gql, ApolloError} from '@apollo/client';
+import {useMutation, gql} from '@apollo/client';
 
 const CREATE_LINK = gql`
   mutation CreateLink($createLinkId: String, $uri: String, $title: String) {

@@ -3,7 +3,6 @@ import {
   View,
   Text,
   Image,
-  ImageBackground,
   Pressable,
   SafeAreaView,
   BackHandler,

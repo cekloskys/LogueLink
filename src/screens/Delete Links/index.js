@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Alert, FlatList, View, SectionList, Text} from 'react-native';
+import {Alert, View, SectionList, Text} from 'react-native';
 import {useQuery, gql} from '@apollo/client';
 import LinkDelete from '../../components/Link Delete';
 import styles from './styles';

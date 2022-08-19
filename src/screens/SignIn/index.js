@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import {useMutation, gql, ApolloError, useQuery} from '@apollo/client';
+import {useMutation, gql} from '@apollo/client';
 import 'localstorage-polyfill';
 import Entypo from 'react-native-vector-icons/Entypo';
 
@@ -49,7 +49,6 @@ const SignInScreen = () => {
 
     if (data) {
       if (!unmounted) {
-        // save token
         localStorage.setItem('token', data.signInLink.token);
         localStorage.setItem('Name', data.signInLink.user.name);
         navigation.navigate('Admin');

@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Image} from 'react-native';
+import {Image} from 'react-native';
 import styles from './styles';
 import landscapeStyles from './landscapeStyles';
 import {useRoute} from '@react-navigation/native';

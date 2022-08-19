@@ -2,7 +2,6 @@ import React, {useEffect} from 'react';
 import {
   View,
   Text,
-  ImageBackground,
   Pressable,
   SafeAreaView,
   Image,
